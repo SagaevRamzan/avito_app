@@ -1,25 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import {useDispatch, useSelector} from "react-redux";
+import Foto from "./Foto";
+import {useEffect} from "react";
+import {LoadAlboom, LoadFoto} from "./actions";
+import Big_Foto from "./Big_Foto";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const fotos=useSelector(state=>state.fotos);
+    const big_loaded=useSelector(state=>state.big_loaded);
+
+    const dispatch=useDispatch();
+    useEffect(()=>{
+       dispatch(LoadAlboom())
+    },[]);
+
+if (big_loaded===true){
+    return (<div className="app">
+                <header className="app_header">
+                    TEST APP
+                </header>
+                <div className="pict">
+                    {fotos.map(foto => {
+                        return <Foto foto={foto} key={foto.id}/>
+                    })}
+                </div>
+                <div>
+                    <Big_Foto url={fotos.id} key={fotos.id}/>
+                </div>
+            </div>
+    );
+}
+else {
+    return (<div className="app">
+                <header className="app_header">
+                    TEST APP
+                </header>
+                <div className="pict">
+                    {fotos.map(foto => {
+                        return <Foto foto={foto} key={foto.id}/>
+                    })}
+                </div>
+             </div>
+    );
+}
+
+
 }
 
 export default App;

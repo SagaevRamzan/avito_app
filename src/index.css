@@ -1,13 +1,142 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+body{
+font-family: 'Roboto', sans-serif;
+}
+.app{
+  width: 770px;
+  max-width: 100%;
+  height: 828px;
+  margin: auto;
+}
+.app_header{
+  width: 233px;
+  margin: auto;
+  font-weight: bold;
+  font-size: 36px;
+  padding: 20px;
+
+}
+.pic_arr {
+  width: 230px;
+  height: 142px;
+  margin:10px 10px;
+
+}
+.pict{
+  width: 770px;
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.modal_window{
+  width: 625px;
+  max-width: 100%;
+  height: 445px;
+  border: 1px solid green;
+  position: absolute;
+  top: 20%;
+  left: 33%;
+  background: rgba(254,254,254,1);
+}
+
+.big_foto img{
+  width: 330px;
+  max-width: 100%;
+  height: 207px;
+  padding: 30px;
+}
+.big_foto{
+  width: 620px;
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.input_name{
+  width: 324px;
+  height: 30px;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 100px;
+  left: 5%;
+  margin-bottom: 10px;
+}
+.input_comment{
+  width: 324px;
+  height: 30px;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 50px;
+  left: 5%;
+  margin-bottom: 10px;
+}
+.but_comment{
+  width: 332px;
+  height: 36px;
+  color: white;
+  background-color: cornflowerblue;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 0px;
+  left: 5%;
+  margin-bottom: 15px;
+}
+.comments{
+  width: 120px;
+  text-align: start;
+  margin: 30px ;
+}
+.close_window{
+  width: 30px;
+  height: 30px;
+  color: black;
+  background-color: white;
+  border: none;
+  font-size: 24px;
+  margin: 20px 10px;
+
+}
+a{
+  text-decoration: none;
+}
+
+.close_window:hover { background: gray; }
+@media only screen and (max-width: 600px){
+   .app{
+    margin: auto;
+    align-items: center;
+  }
+  .app, .app_header,  .pic_arr, .arr_pict{
+    width: 100%;
+    height: auto;
+  }
+  .app_header{
+    text-align: center;
+  }
+  .fotoX{
+  width: 100%;
+  }
+
+  .modal_window{
+    width: 100%;
+    height: 650px;
+    margin: 0px;
+    padding: 0px;
+    position: absolute;
+    top: 280%;
+    left: auto;
+  }
+  .big_foto {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    align-items: center;
+  }
+
+  .close_window{
+    position: absolute;
+    right: 5%;
+    top: 3%;
+  }
 }
